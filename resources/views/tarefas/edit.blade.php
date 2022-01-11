@@ -5,12 +5,13 @@
 @section('name','Edição de tarefas')
 
 
-@if(session('warning'))
+@if($errors->any())
+
     <x-alert>
-
-    {{session('warning')}}
-
-    </x-alert>
+        @foreach($errors->all() as $error)
+        {{$error}}<br>
+        @endforeach
+    </x-alert>    
 @endif
 
 @section('content')
